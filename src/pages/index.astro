@@ -1,7 +1,7 @@
 ---
 import Base from '../layouts/Base.astro';
 import MoireHero from '../components/MoireHero.astro';
-import { research, people } from '../lib/data';
+import { research, people, funding } from '../lib/data';
 const highlights = research.sections[0].cards.slice(0, 3);
 const email = people.pi.emails[0];
 ---
@@ -10,7 +10,7 @@ const email = people.pi.emails[0];
     <div class="wrap hero__grid">
       <div class="stack" style="gap: 28px;">
         <h1 style="color: #ffffff;">AI for quantum materials</h1>
-        <p class="hero__lede">We teach neural networks to describe electrons in atomically thin materials, precisely enough to model real experiments.</p>
+        <p class="hero__lede">We teach quantum wavefunction, often involving neural networks, to precisely describe electron dances in real experiments.</p>
         <div class="row">
           <a class="btn" href="/research/">See the research</a>
           <a class="btn btn--ghost" href="/people/">Join the group</a>
@@ -23,21 +23,20 @@ const email = people.pi.emails[0];
 
   <section class="section">
     <div class="wrap stack" style="gap: 40px;">
-      <h2 data-reveal>Three ingredients</h2>
       <div class="grid grid--3">
         <div class="stack" data-reveal>
           <svg width="56" height="56" viewBox="0 0 56 56" fill="none" stroke="#003594" stroke-width="1.6" aria-hidden="true"><path d="M6 20 L28 10 L50 20 L28 30 Z"></path><path d="M6 34 L28 24 L50 34 L28 44 Z" stroke="#FFC72C"></path></svg>
-          <h3>The stage: moiré materials</h3>
+          <h3>Stage: moiré materials</h3>
           <p class="muted">Two sheets one atom thick, stacked with a tiny twist, make a pattern hundreds of times larger than the atoms. Twist angle, electric gates, and material choice tune the landscape electrons feel.</p>
         </div>
         <div class="stack" data-reveal>
           <svg width="56" height="56" viewBox="0 0 56 56" fill="none" stroke="#003594" stroke-width="1.6" aria-hidden="true"><circle cx="16" cy="18" r="4" fill="#FFC72C" stroke="none"></circle><circle cx="40" cy="18" r="4" fill="#FFC72C" stroke="none"></circle><circle cx="28" cy="38" r="4" fill="#FFC72C" stroke="none"></circle><path d="M16 18 L40 18 L28 38 Z" stroke-dasharray="3 3"></path></svg>
-          <h3>The dancers: interacting electrons</h3>
+          <h3>Dancers: interacting electrons</h3>
           <p class="muted">Electrons repel. Crowded, they flow like a liquid. Sparse, they freeze into a crystal. In between they form patterns no one has fully catalogued, and that is where new phases of matter hide.</p>
         </div>
         <div class="stack" data-reveal>
           <svg width="56" height="56" viewBox="0 0 56 56" fill="none" stroke="#003594" stroke-width="1.6" aria-hidden="true"><circle cx="10" cy="14" r="3"></circle><circle cx="10" cy="28" r="3"></circle><circle cx="10" cy="42" r="3"></circle><circle cx="28" cy="21" r="3"></circle><circle cx="28" cy="35" r="3"></circle><circle cx="46" cy="28" r="4" fill="#FFC72C" stroke="none"></circle><path d="M13 14 L25 21 M13 28 L25 21 M13 28 L25 35 M13 42 L25 35 M31 21 L42 28 M31 35 L42 28"></path></svg>
-          <h3>The camera: neural quantum states</h3>
+          <h3>Camera: neural quantum states</h3>
           <p class="muted">A neural network learns the many-electron wavefunction and finds the lowest-energy arrangement on its own. It can absorb the real defects in a device, so the simulation models the actual sample.</p>
         </div>
       </div>
@@ -76,9 +75,25 @@ const email = people.pi.emails[0];
     </div>
   </section>
 
+  <section class="section section--tint">
+    <div class="wrap stack" style="gap: 28px;">
+      <p class="eyebrow" data-reveal>Supported by</p>
+      <div class="grid grid--2" style="gap: 40px;">
+        {funding.map((f: any) => (
+          <div class="stack" style="gap: 8px;" data-reveal>
+            <h3>{f.agency}<span class="muted" style="font-weight: 600;"> · {f.program}</span></h3>
+            <p><a href={f.url} rel="noopener"><strong>{f.title}</strong></a> <span class="muted">({f.number}, {f.period})</span></p>
+            <p class="muted small">{f.note}</p>
+            {f.press && <p class="small"><a href={f.press} rel="noopener">{f.pressLabel ?? 'Read more'}</a></p>}
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
   <section class="section section--blue">
     <div class="wrap grid grid--2" style="align-items: center; gap: 48px;">
-      <h2 data-reveal>Undergraduates welcome. You will learn Python, machine learning, and how electrons really behave.</h2>
+      <h2 data-reveal>We welcome students from all backgrounds who are excited to learn Python, machine learning, and how electrons really behave.</h2>
       <div class="stack" style="gap: 10px;" data-reveal>
         <a href={`mailto:${email}`} style="color: #FFC72C; font-weight: 700;">{email}</a>
         <span>{people.pi.office}, Hofstra University, Hempstead, NY</span>

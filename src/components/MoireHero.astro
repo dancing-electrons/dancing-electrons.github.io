@@ -1,10 +1,10 @@
 ---
-// Animated moiré lattice with electrons settling on the superlattice sites.
-// Pure canvas, no dependencies. Twist angle drifts slowly and follows the
-// pointer a little. Under prefers-reduced-motion a single static frame is drawn.
+// Static hero graphic: a triangular Wigner crystal of electrons sitting on the
+// moiré superlattice formed by two twisted atomic lattices. Drawn once on a
+// canvas (and again on resize); no animation.
 ---
 <div class="moire" data-moire>
-  <canvas class="moire__canvas" aria-label="Two twisted atomic lattices forming a moiré pattern, with electrons on the moiré sites"></canvas>
+  <canvas class="moire__canvas" aria-label="Two twisted atomic lattices forming a moiré pattern, with a triangular crystal of electrons on the moiré sites"></canvas>
 </div>
 
 <style>
@@ -17,13 +17,10 @@
   const canvas = host?.querySelector('canvas');
   if (host && canvas) {
     const ctx = canvas.getContext('2d')!;
-    const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     const LIGHT = '#84C8FF', MID = '#2E96FF', GOLD = '#FFC72C';
-    const A = 22;                 // atomic lattice constant, px at 540
+    const A = 22;                       // atomic lattice constant, px at 540
+    const THETA = 9 * Math.PI / 180;    // twist angle; sets the crystal period a/(2 sin(θ/2))
     let size = 540, dpr = 1;
-    let theta = 6, target = 6;    // degrees
-    let pointer = 0;              // -1..1
-    const electrons: { x: number; y: number; tx: number; ty: number }[] = [];
 
     function resize() {
       const rect = host!.getBoundingClientRect();
@@ -50,7 +47,7 @@
       ctx.restore();
     }
 
-    // Moiré superlattice sites for twist th (rad): triangular, period a/(2 sin(th/2)),
+    // Moiré superlattice sites for twist th: triangular, period a/(2 sin(th/2)),
     // rotated by th/2 + 30 degrees relative to the first lattice, with a site at the origin.
     function sites(th: number) {
       const s = size / 540, a = A * s, R = size / 2;
@@ -64,72 +61,31 @@
         const x = m * v1[0] + k * v2[0], y = m * v1[1] + k * v2[1];
         if (x * x + y * y <= (R - 12 * s) * (R - 12 * s)) out.push([x, y]);
       }
-      out.sort((p, q) => (p[0] * p[0] + p[1] * p[1]) - (q[0] * q[0] + q[1] * q[1]));
       return out;
     }
 
-    function draw(th: number, t: number) {
+    function draw() {
       const R = size / 2, s = size / 540;
       ctx.clearRect(0, 0, size, size);
       lattice(LIGHT, 0);
-      lattice(MID, th);
-      // radial fade
+      lattice(MID, THETA);
       const g = ctx.createRadialGradient(R, R, R * 0.55, R, R, R);
       g.addColorStop(0, 'rgba(0,0,0,1)'); g.addColorStop(1, 'rgba(0,0,0,0)');
       ctx.globalCompositeOperation = 'destination-in';
       ctx.fillStyle = g; ctx.fillRect(0, 0, size, size);
       ctx.globalCompositeOperation = 'source-over';
-      // electrons ease toward the current moiré sites
-      const S = sites(th);
-      while (electrons.length < S.length) {
-        const [x, y] = S[electrons.length];
-        electrons.push({ x, y, tx: x, ty: y });
-      }
-      electrons.length = S.length;
-      for (let i = 0; i < S.length; i++) {
-        const e = electrons[i];
-        e.tx = S[i][0]; e.ty = S[i][1];
-        if (reduce) { e.x = e.tx; e.y = e.ty; }
-        else { e.x += (e.tx - e.x) * 0.08; e.y += (e.ty - e.y) * 0.08; }
-      }
       ctx.save(); ctx.translate(R, R);
-      for (let i = 0; i < electrons.length; i++) {
-        const e = electrons[i];
-        const d = Math.hypot(e.x, e.y) / R;
-        const alpha = Math.max(0, 1 - Math.pow(d, 3));
-        const r = (6.5 + 1.2 * Math.sin(t / 700 + i)) * s;
-        ctx.shadowColor = GOLD; ctx.shadowBlur = 14 * s;
-        ctx.globalAlpha = alpha;
-        ctx.fillStyle = GOLD;
-        ctx.beginPath(); ctx.arc(e.x, e.y, r, 0, Math.PI * 2); ctx.fill();
+      ctx.fillStyle = GOLD; ctx.shadowColor = GOLD; ctx.shadowBlur = 14 * s;
+      for (const [x, y] of sites(THETA)) {
+        const d = Math.hypot(x, y) / R;
+        ctx.globalAlpha = Math.max(0, 1 - Math.pow(d, 3));
+        ctx.beginPath(); ctx.arc(x, y, 7 * s, 0, Math.PI * 2); ctx.fill();
       }
       ctx.restore();
       ctx.globalAlpha = 1; ctx.shadowBlur = 0;
     }
 
-    let raf = 0;
-    function frame(t: number) {
-      const base = 6.5 + 2.5 * Math.sin(t / 9000);
-      target = base + 1.5 * pointer;
-      theta += (target - theta) * 0.03;
-      draw(theta * Math.PI / 180, t);
-      raf = requestAnimationFrame(frame);
-    }
-
-    resize();
-    if (reduce) {
-      draw(6 * Math.PI / 180, 0);
-    } else {
-      window.addEventListener('pointermove', (ev) => {
-        const r = host!.getBoundingClientRect();
-        pointer = Math.max(-1, Math.min(1, ((ev.clientX - r.left) / r.width - 0.5) * 2));
-      }, { passive: true });
-      const io = new IntersectionObserver((en) => {
-        if (en[0].isIntersecting) { if (!raf) raf = requestAnimationFrame(frame); }
-        else { cancelAnimationFrame(raf); raf = 0; }
-      });
-      io.observe(host);
-    }
-    window.addEventListener('resize', () => { resize(); if (reduce) draw(6 * Math.PI / 180, 0); });
+    resize(); draw();
+    window.addEventListener('resize', () => { resize(); draw(); });
   }
 </script>

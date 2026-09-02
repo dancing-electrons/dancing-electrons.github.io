@@ -1,0 +1,18 @@
+# Shown in the "Supported by" band on the home page.
+- agency: National Science Foundation
+  program: LEAPS-MPS
+  title: "Correlated Methods for Correlated Phases"
+  number: DMR-2532734
+  url: https://www.nsf.gov/awardsearch/show-award/?AWD_ID=2532734
+  period: 2025-2027
+  note: Supports the group's research on moiré materials, undergraduate research training, and computational workshops for students at Hofstra and neighboring institutions.
+  press: https://news.hofstra.edu/2025/11/17/hofstra-professor-explores-dancing-electrons-in-next-generation-quantum-materials/
+  pressLabel: Read the Hofstra story
+
+- agency: NSF ACCESS
+  program: Computing allocation
+  title: "Correlated methods for 2D quantum materials"
+  number: PHY250273
+  url: https://www.xras.org/public/requests/261321-ACCESS-PHY250273
+  period: 2025
+  note: GPU and CPU time on NCSA Delta and DeltaAI for neural quantum state and quantum Monte Carlo simulations.

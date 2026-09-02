@@ -1,0 +1,251 @@
+# One entry per paper. Order does not matter: the page sorts by `date` and
+# numbers from the oldest ([1]) to the newest. `pi` is the zero-based index
+# of the PI in `authors`; it is bolded. Use "…" as an author entry to elide.
+# `doi` builds the journal link; leave it out for a preprint.
+
+- id: nonadiabatic2015
+  date: 2015-09
+  authors: [Y. Yang, I. Kylänpää, N. M. Tubman, J. T. Krogel, S. Hammes-Schiffer, D. M. Ceperley]
+  pi: 0
+  title: "How large are nonadiabatic effects in atomic and diatomic systems?"
+  journal: J. Chem. Phys.
+  volume: 143
+  pages: "124308"
+  year: 2015
+  arxiv: "1507.05959"
+  doi: 10.1063/1.4931667
+
+- id: interpnad2016
+  date: 2016-12
+  authors: [N. M. Tubman, Y. Yang, S. Hammes-Schiffer, D. M. Ceperley]
+  pi: 1
+  title: "Interpolated wave functions for nonadiabatic simulations with the fixed-node quantum Monte Carlo method"
+  journal: ACS Symp. Ser.
+  volume: 1234
+  pages: "47-61"
+  year: 2016
+  arxiv: "1607.02780"
+
+- id: qmcpack2018
+  date: 2018-04
+  authors: [J. Kim, "…", Y. Yang, "…"]
+  pi: 2
+  title: "QMCPACK: an open source ab initio quantum Monte Carlo package for the electronic structure of atoms, molecules and solids"
+  journal: "J. Phys.: Condens. Matter"
+  volume: 30
+  pages: "195901"
+  year: 2018
+  arxiv: "1802.06922"
+  doi: 10.1088/1361-648X/aab9c3
+
+- id: gap2020
+  date: 2020-02
+  authors: [Y. Yang, V. Gorelov, C. Pierleoni, D. M. Ceperley, M. Holzmann]
+  pi: 0
+  title: "Electronic band gaps from quantum Monte Carlo methods"
+  journal: Phys. Rev. B
+  volume: 101
+  pages: "085115"
+  year: 2020
+  arxiv: "1910.07531"
+  doi: 10.1103/PhysRevB.101.085115
+
+- id: licpexpt2020
+  date: 2020-04
+  authors: [N. Hiraoka, Y. Yang, T. Hagiya, A. Niozu, K. Matsuda, S. Huotari, M. Holzmann, D. M. Ceperley]
+  pi: 1
+  title: "Direct observation of the momentum distribution and renormalization factor in lithium"
+  journal: Phys. Rev. B
+  volume: 101
+  pages: "165124"
+  year: 2020
+  doi: 10.1103/PhysRevB.101.165124
+
+- id: licptheo2020
+  date: 2020-04
+  authors: [Y. Yang, N. Hiraoka, K. Matsuda, M. Holzmann, D. M. Ceperley]
+  pi: 0
+  title: "Quantum Monte Carlo Compton profiles of solid and liquid lithium"
+  journal: Phys. Rev. B
+  volume: 101
+  pages: "165125"
+  year: 2020
+  arxiv: "1912.12295"
+  doi: 10.1103/PhysRevB.101.165125
+
+- id: h2solid2023
+  date: 2023-02
+  authors: [H. Niu, Y. Yang, S. Jensen, M. Holzmann, C. Pierleoni, D. M. Ceperley]
+  pi: 1
+  title: "Stable solid molecular hydrogen above 900 K from a machine-learned potential trained with diffusion quantum Monte Carlo"
+  journal: Phys. Rev. Lett.
+  volume: 130
+  pages: "076102"
+  year: 2023
+  arxiv: "2209.00658"
+  doi: 10.1103/PhysRevLett.130.076102
+
+- id: cgap2023
+  date: 2023-09
+  authors: [V. Gorelov, Y. Yang, M. Ruggeri, D. M. Ceperley, C. Pierleoni, M. Holzmann]
+  pi: 1
+  title: "Neutral band gap of carbon by quantum Monte Carlo methods"
+  journal: Condens. Matter Phys.
+  volume: 26
+  pages: "33701"
+  year: 2023
+  arxiv: "2303.17944"
+  doi: 10.5488/CMP.26.33701
+
+- id: train2024
+  date: 2024-02
+  authors: [D. M. Ceperley, S. Jensen, Y. Yang, H. Niu, C. Pierleoni, M. Holzmann]
+  pi: 2
+  title: "Training models using forces computed by stochastic electronic structure methods"
+  journal: Electron. Struct.
+  volume: 6
+  pages: "015011"
+  year: 2024
+  arxiv: "2310.15994"
+  doi: 10.1088/2516-1075/ad2eb0
+
+- id: mch2024
+  date: 2024-02
+  authors: [Y. Yang, M. A. Morales, S. Zhang]
+  pi: 0
+  title: "Metal-insulator transition in a semiconductor heterobilayer model"
+  journal: Phys. Rev. Lett.
+  volume: 132
+  pages: "076503"
+  year: 2024
+  arxiv: "2306.14954"
+  doi: 10.1103/PhysRevLett.132.076503
+
+- id: nqs2024
+  date: 2024-12
+  authors: [C. Smith, Y. Chen, R. Levy, Y. Yang, M. A. Morales, S. Zhang]
+  pi: 3
+  title: "Unified variational approach description of ground-state phases of the two-dimensional electron gas"
+  journal: Phys. Rev. Lett.
+  volume: 133
+  pages: "266504"
+  year: 2024
+  arxiv: "2405.19397"
+  doi: 10.1103/PhysRevLett.133.266504
+
+- id: hmch2024
+  date: 2024-12
+  authors: [Y. Yang, M. A. Morales, S. Zhang]
+  pi: 0
+  title: "Ferromagnetic semimetal and charge-density wave phases of interacting electrons in a honeycomb moiré potential"
+  journal: Phys. Rev. Lett.
+  volume: 133
+  pages: "266501"
+  year: 2024
+  arxiv: "2406.01715"
+  doi: 10.1103/PhysRevLett.133.266501
+
+- id: microemulsion2025
+  date: 2025-01
+  authors: [J. Sung, J. Wang, I. Esterlis, P. A. Volkov, G. Scuri, Y. Zhou, E. Brutschea, T. Taniguchi, K. Watanabe, Y. Yang, M. A. Morales, S. Zhang, A. J. Millis, M. D. Lukin, P. Kim, E. Demler, H. Park]
+  pi: 9
+  title: "Observation of an electronic microemulsion phase emerging from a quantum crystal-to-liquid transition"
+  journal: Nat. Phys.
+  volume: 21
+  pages: "437"
+  year: 2025
+  arxiv: "2311.18069"
+  doi: 10.1038/s41567-024-02759-8
+
+- id: dualgate2025
+  date: 2025-01
+  authors: [Yiqi Yang, Yubo Yang, K. Chen, M. A. Morales, S. Zhang]
+  pi: 1
+  title: "The two-dimensional homogeneous electron gas with symmetric dual-gate screening: exchange-correlation functional and other ground-state properties"
+  journal: Phys. Rev. B
+  volume: 111
+  pages: "045136"
+  year: 2025
+  arxiv: "2410.07445"
+  doi: 10.1103/PhysRevB.111.045136
+
+- id: macemelt2025
+  date: 2025-02
+  authors: [S. Goswami, S. Jensen, Y. Yang, M. Holzmann, C. Pierleoni, D. M. Ceperley]
+  pi: 2
+  title: "High temperature melting of dense molecular hydrogen from machine-learning interatomic potentials trained on quantum Monte Carlo"
+  journal: J. Chem. Phys.
+  volume: 162
+  pages: "054118"
+  year: 2025
+  arxiv: "2411.15665"
+
+- id: llpt2025
+  date: 2025-04
+  authors: [M. Istas, S. Jensen, Y. Yang, M. Holzmann, C. Pierleoni, D. M. Ceperley]
+  pi: 2
+  title: "The liquid-liquid phase transition of hydrogen and its critical point: analysis from ab initio simulation and a machine-learned potential"
+  journal: Phys. Rev. E
+  volume: 111
+  pages: "045307"
+  year: 2025
+  arxiv: "2412.14953"
+  doi: 10.1103/PhysRevE.111.045307
+
+- id: critpt2025
+  date: 2025-09
+  authors: [M. Zhu, M. Tian, "…", Y. Yang, "…"]
+  pi: 3
+  title: "Probing the critical point (CritPt) of AI reasoning: a frontier physics research benchmark"
+  year: 2025
+  arxiv: "2509.26574"
+
+- id: gate2025
+  date: 2025-10
+  authors: [A. Valenti, V. Calvera, Y. Yang, M. A. Morales, S. A. Kivelson, I. Esterlis, S. Zhang]
+  pi: 2
+  title: "Critical gate distance for Wigner crystallization in the two-dimensional electron gas"
+  journal: Phys. Rev. Lett.
+  volume: 135
+  pages: "166501"
+  year: 2025
+  arxiv: "2501.16430"
+
+- id: qgeom2025
+  date: 2025-12
+  authors: [A. Valenti, Y. Vituri, Y. Yang, D. E. Parker, T. Soejima, J. Dong, M. A. Morales, A. Vishwanath, E. Berg, S. Zhang]
+  pi: 2
+  title: "Quantum geometry driven crystallization: a neural-network variational Monte Carlo study"
+  year: 2025
+  arxiv: "2512.07947"
+
+- id: hubbard2026
+  date: 2026-01
+  authors: [Yiqi Yang, Yubo Yang, M. A. Morales, S. Zhang]
+  pi: 1
+  title: "Engineering Hubbard models with gated two-dimensional moiré systems"
+  journal: Phys. Rev. B
+  volume: 113
+  pages: "035135"
+  year: 2026
+  arxiv: "2508.13314"
+
+- id: pwc2026
+  date: 2026-02
+  authors: [C. Smith, Y. Yang, Z.-Q. Wan, Y. Chen, M. A. Morales, S. Zhang]
+  pi: 1
+  title: "Neural network discovery of paired Wigner crystals in artificial graphene"
+  year: 2026
+  arxiv: "2602.16798"
+
+- id: disorder2026
+  date: 2026-06
+  authors: [Z. Ge, C. Smith, Z. He, Y. Yang, Q. Li, H.-L. Kim, Z. Xiang, J. Xiao, W. Zhou, S. Kahn, A. Hu, M. Erdi, R. Banerjee, T. Taniguchi, K. Watanabe, S. A. Tongay, M. A. Morales, S. Zhang, F. Wang, M. F. Crommie]
+  pi: 3
+  title: "Visualizing the impact of quenched disorder on 2D electron Wigner solids"
+  journal: Nature
+  volume: 654
+  pages: "902"
+  year: 2026
+  arxiv: "2510.12009"
+  doi: 10.1038/s41586-026-10654-w

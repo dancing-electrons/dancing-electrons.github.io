@@ -1,0 +1,60 @@
+---
+import Base from '../layouts/Base.astro';
+import { people } from '../lib/data';
+import Placeholder from '../components/Placeholder.astro';
+const { pi, current, alumni } = people;
+---
+<Base title="People">
+  <div class="wrap page-title"><h1>People</h1></div>
+
+  <section class="section" style="padding-top: 24px;">
+    <div class="wrap pi-card">
+      <div class="person__photo">
+        {pi.photo ? <img src={pi.photo} alt={pi.name} /> : <Placeholder />}
+      </div>
+      <div class="stack" style="gap: 12px;">
+        <h2>{pi.name}</h2>
+        <p class="muted">{pi.title}, {pi.department}</p>
+        <p>{pi.bio}</p>
+        <div class="stack" style="gap: 4px;">
+          {pi.emails.map((e: string) => <a href={`mailto:${e}`}>{e}</a>)}
+          <span class="muted">{pi.office}</span>
+        </div>
+        <div class="row" style="gap: 10px;">
+          {pi.links.map((l: any) => <a class="chip" href={l.url} rel="noopener">{l.label}</a>)}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--tint">
+    <div class="wrap stack" style="gap: 32px;">
+      <h2>Current members</h2>
+      <div class="grid grid--4">
+        {current.map((p: any) => (
+          <div class="person">
+            <div class="person__photo">{p.photo ? <img src={p.photo} alt={p.name} /> : <Placeholder />}</div>
+            <div class="person__name">{p.name}</div>
+            <div class="person__role">{p.role}{p.since && `, since ${p.since}`}</div>
+            {p.email && <a class="person__email" href={`mailto:${p.email}`}>{p.email}</a>}
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap stack" style="gap: 20px;">
+      <h2>Alumni</h2>
+      {alumni.length === 0 ? (
+        <p class="muted">The group started in 2025. Alumni will be listed here.</p>
+      ) : (
+        <ul class="stack" style="gap: 8px; padding-left: 20px; margin: 0;">
+          {alumni.map((a: any) => (
+            <li>{a.name}, {a.role}, {a.years}{a.now && `. Now ${a.now}`}</li>
+          ))}
+        </ul>
+      )}
+    </div>
+  </section>
+</Base>

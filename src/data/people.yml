@@ -1,0 +1,43 @@
+# Photos live in public/people/. Omit `photo` to show a placeholder mark.
+pi:
+  name: Yubo "Paul" Yang
+  title: Assistant Professor
+  department: Department of Physics and Astronomy, Hofstra University
+  office: Berliner Hall 0027
+  photo: /people/yubo-yang.jpg
+  emails:
+    - paul.yang@hofstra.edu
+    - yubo.paul.yang@gmail.com
+  links:
+    - { label: Google Scholar, url: "https://scholar.google.com/citations?user=ZLz7D4IAAAAJ&hl=en" }
+    - { label: ORCID, url: "https://orcid.org/0000-0002-8800-9426" }
+    - { label: GitHub, url: "https://github.com/Paul-St-Young" }
+    - { label: Personal site, url: "https://paul-st-young.github.io" }
+  bio: >-
+    Paul studied mathematics and physics at Denison University and earned his
+    PhD in physics at the University of Illinois Urbana-Champaign with David
+    Ceperley. After a postdoc at Lawrence Livermore National Laboratory and a
+    Flatiron Research Fellowship at the Center for Computational Quantum
+    Physics, he joined Hofstra University in 2025. He develops neural-network
+    and quantum Monte Carlo methods for strongly interacting electrons.
+
+current:
+  - name: Nicole Adelson
+    role: Undergraduate researcher
+    email: nadelson1@pride.hofstra.edu
+    since: 2025
+  - name: Jadan Joa
+    role: Undergraduate researcher
+    email: jjoa1@pride.hofstra.edu
+    since: 2025
+  - name: Emilia Szynwald
+    role: Undergraduate researcher
+    email: eszynwald1@pride.hofstra.edu
+    since: 2025
+  - name: Makayla "Cameron" Bogart-Getner
+    role: Undergraduate researcher
+    email: mbogartgetner1@pride.hofstra.edu
+    since: 2025
+
+# Most recent first. `now` is optional.
+alumni: []

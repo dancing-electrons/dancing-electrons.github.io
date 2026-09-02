@@ -1,0 +1,98 @@
+---
+import Base from '../layouts/Base.astro';
+import MoireHero from '../components/MoireHero.astro';
+import { research, people } from '../lib/data';
+const highlights = research.sections[0].cards.slice(0, 3);
+const email = people.pi.emails[0];
+---
+<Base title="Home">
+  <section class="hero">
+    <div class="wrap hero__grid">
+      <div class="stack" style="gap: 28px;">
+        <h1 style="color: #ffffff;">AI for quantum materials</h1>
+        <p class="hero__lede">We teach neural networks to describe electrons in atomically thin materials, precisely enough to model real experiments.</p>
+        <div class="row">
+          <a class="btn" href="/research/">See the research</a>
+          <a class="btn btn--ghost" href="/people/">Join the group</a>
+        </div>
+        <p class="eyebrow" style="color: #84C8FF;">Department of Physics and Astronomy, Hofstra University</p>
+      </div>
+      <MoireHero />
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap stack" style="gap: 40px;">
+      <h2 data-reveal>Three ingredients</h2>
+      <div class="grid grid--3">
+        <div class="stack" data-reveal>
+          <svg width="56" height="56" viewBox="0 0 56 56" fill="none" stroke="#003594" stroke-width="1.6" aria-hidden="true"><path d="M6 20 L28 10 L50 20 L28 30 Z"></path><path d="M6 34 L28 24 L50 34 L28 44 Z" stroke="#FFC72C"></path></svg>
+          <h3>The stage: moiré materials</h3>
+          <p class="muted">Two sheets one atom thick, stacked with a tiny twist, make a pattern hundreds of times larger than the atoms. Twist angle, electric gates, and material choice tune the landscape electrons feel.</p>
+        </div>
+        <div class="stack" data-reveal>
+          <svg width="56" height="56" viewBox="0 0 56 56" fill="none" stroke="#003594" stroke-width="1.6" aria-hidden="true"><circle cx="16" cy="18" r="4" fill="#FFC72C" stroke="none"></circle><circle cx="40" cy="18" r="4" fill="#FFC72C" stroke="none"></circle><circle cx="28" cy="38" r="4" fill="#FFC72C" stroke="none"></circle><path d="M16 18 L40 18 L28 38 Z" stroke-dasharray="3 3"></path></svg>
+          <h3>The dancers: interacting electrons</h3>
+          <p class="muted">Electrons repel. Crowded, they flow like a liquid. Sparse, they freeze into a crystal. In between they form patterns no one has fully catalogued, and that is where new phases of matter hide.</p>
+        </div>
+        <div class="stack" data-reveal>
+          <svg width="56" height="56" viewBox="0 0 56 56" fill="none" stroke="#003594" stroke-width="1.6" aria-hidden="true"><circle cx="10" cy="14" r="3"></circle><circle cx="10" cy="28" r="3"></circle><circle cx="10" cy="42" r="3"></circle><circle cx="28" cy="21" r="3"></circle><circle cx="28" cy="35" r="3"></circle><circle cx="46" cy="28" r="4" fill="#FFC72C" stroke="none"></circle><path d="M13 14 L25 21 M13 28 L25 21 M13 28 L25 35 M13 42 L25 35 M31 21 L42 28 M31 35 L42 28"></path></svg>
+          <h3>The camera: neural quantum states</h3>
+          <p class="muted">A neural network learns the many-electron wavefunction and finds the lowest-energy arrangement on its own. It can absorb the real defects in a device, so the simulation models the actual sample.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--tint">
+    <div class="wrap grid grid--2" style="align-items: center; gap: 48px;">
+      <div class="stack" data-reveal>
+        <p class="eyebrow">From microscope to model</p>
+        <h2>A scanning tunneling microscope maps every defect. The network takes it from there.</h2>
+        <p class="muted">In bilayer MoSe<sub>2</sub>, defect positions measured by STM were fed straight into a neural quantum state. The simulated electron crystal matched the images and explained why disorder stabilizes it.</p>
+        <p><a href="/research/#moire"><strong>Nature 654, 902 (2026)</strong></a></p>
+      </div>
+      <div class="paper__fig" data-reveal>
+        <img src="/research/arxiv-2510-12009-fig2.png" alt="STM images of Wigner solids next to neural quantum state simulations" loading="lazy" />
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap stack" style="gap: 32px;">
+      <div class="row" style="justify-content: space-between; align-items: baseline;">
+        <h2 data-reveal>Recent highlights</h2>
+        <a href="/research/"><strong>All research</strong></a>
+      </div>
+      <div class="grid grid--3">
+        {highlights.map((c: any) => (
+          <a class="card" href="/research/#moire" data-reveal>
+            <div class="card__thumb">{c.figure && <img src={c.figure} alt="" loading="lazy" />}</div>
+            <div class="card__tag">{c.venue}</div>
+            <div class="card__title">{c.title}</div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--blue">
+    <div class="wrap grid grid--2" style="align-items: center; gap: 48px;">
+      <h2 data-reveal>Undergraduates welcome. You will learn Python, machine learning, and how electrons really behave.</h2>
+      <div class="stack" style="gap: 10px;" data-reveal>
+        <a href={`mailto:${email}`} style="color: #FFC72C; font-weight: 700;">{email}</a>
+        <span>{people.pi.office}, Hofstra University, Hempstead, NY</span>
+        <a href="/people/" style="color: #ffffff;">Meet the group</a>
+      </div>
+    </div>
+  </section>
+</Base>
+
+<style>
+  .hero { background: linear-gradient(180deg, #001254 0%, #001a6e 100%); color: #ffffff; padding-top: clamp(32px, 5vw, 56px); padding-bottom: clamp(48px, 6vw, 80px); overflow: hidden; }
+  .hero__grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); align-items: center; gap: 32px; }
+  .hero__lede { font-size: 20px; line-height: 1.55; color: #cfe3ff; max-width: 520px; }
+  @media (max-width: 840px) { .hero__grid { grid-template-columns: minmax(0, 1fr); } }
+  .card:hover { text-decoration: none; }
+  .card:hover .card__title { color: var(--blue); }
+</style>

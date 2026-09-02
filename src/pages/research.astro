@@ -1,0 +1,44 @@
+---
+import Base from '../layouts/Base.astro';
+import { research, boldPI } from '../lib/data';
+---
+<Base title="Research">
+  <div class="wrap page-title stack" style="gap: 16px;">
+    <h1>Research</h1>
+    <nav class="row" aria-label="Sections" style="gap: 10px;">
+      {research.sections.map((s: any) => <a class="chip" href={`#${s.id}`}>{s.title}</a>)}
+    </nav>
+  </div>
+
+  {research.sections.map((s: any) => (
+    <section class="section" id={s.id}>
+      <div class="wrap stack" style="gap: 20px;">
+        <h2>{s.title}</h2>
+        <p class="lede">{s.intro}</p>
+        {s.intro2 && <p class="lede">{s.intro2}</p>}
+        <div style="margin-top: 16px;">
+          {s.cards.map((c: any) => (
+            <article class="paper">
+              <div class="paper__fig">{c.figure && <img src={c.figure} alt="" loading="lazy" />}</div>
+              <div class="stack" style="gap: 10px;">
+                <h3>{c.title}</h3>
+                <p class="small muted" set:html={boldPI(c.authors)}></p>
+                <p>{c.summary}</p>
+                {c.abstract && (
+                  <details>
+                    <summary>Abstract</summary>
+                    <p>{c.abstract}</p>
+                  </details>
+                )}
+                <div class="paper__links">
+                  {c.venueUrl ? <a class="chip chip--gold" href={c.venueUrl} rel="noopener">{c.venue}</a> : <span class="chip">{c.venue}</span>}
+                  {c.arxiv && <a class="chip" href={`https://arxiv.org/abs/${c.arxiv}`} rel="noopener">arXiv:{c.arxiv}</a>}
+                </div>
+              </div>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+  ))}
+</Base>

@@ -1,0 +1,22 @@
+---
+import { people } from '../lib/data';
+const pi = people.pi;
+---
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="stack" style="gap: 8px;">
+      <strong>Dancing Electrons</strong>
+      <span>{pi.department}</span>
+      <span>{pi.office}, Hempstead, NY 11549</span>
+    </div>
+    <div class="stack" style="gap: 8px;">
+      <strong>Contact</strong>
+      {pi.emails.map((e: string) => <a href={`mailto:${e}`}>{e}</a>)}
+    </div>
+    <div class="stack" style="gap: 8px;">
+      <strong>Elsewhere</strong>
+      {pi.links.map((l: { label: string; url: string }) => <a href={l.url} rel="noopener">{l.label}</a>)}
+      <a href="https://github.com/dancing-electrons" rel="noopener">GitHub organization</a>
+    </div>
+  </div>
+</footer>

@@ -1,0 +1,41 @@
+---
+import Base from '../layouts/Base.astro';
+import { getCollection } from 'astro:content';
+const pubs = await getCollection('publications');
+// Oldest first for numbering; render newest first.
+const sorted = [...pubs].sort((a, b) => a.data.date.localeCompare(b.data.date));
+const numbered = sorted.map((p, i) => ({ n: i + 1, ...p.data })).reverse();
+function authorList(authors: string[], pi: number) {
+  return authors.map((a, i) => (i === pi ? `<b>${a}</b>` : a)).join(', ');
+}
+function ref(p: any) {
+  if (p.journal) return `<i>${p.journal}</i> <b>${p.volume}</b>, ${p.pages} (${p.year}).`;
+  return `arXiv:${p.arxiv} (${p.year}).`;
+}
+---
+<Base title="Publications">
+  <div class="wrap page-title stack" style="gap: 12px;">
+    <h1>Publications</h1>
+    <p class="muted">Newest first. Group members in bold.</p>
+  </div>
+  <section class="section" style="padding-top: 24px;">
+    <div class="wrap">
+      <ol class="pubs">
+        {numbered.map((p) => (
+          <li class="pub">
+            <span class="pub__num">[{p.n}]</span>
+            <span>
+              <span set:html={authorList(p.authors, p.pi)}></span>,{' '}
+              &ldquo;{p.title},&rdquo;{' '}
+              <span set:html={ref(p)}></span>
+              <span class="pub__links">
+                {p.doi && <a href={`https://doi.org/${p.doi}`} rel="noopener">journal</a>}
+                {p.arxiv && <a href={`https://arxiv.org/abs/${p.arxiv}`} rel="noopener">arXiv</a>}
+              </span>
+            </span>
+          </li>
+        ))}
+      </ol>
+    </div>
+  </section>
+</Base>

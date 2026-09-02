@@ -1,0 +1,182 @@
+# Research page. Each section is a theme; each card is a highlighted paper.
+# `authors` is HTML-free text; the PI's name is bolded automatically.
+sections:
+  - id: moire
+    title: Moiré and 2D materials, from experiment to simulation
+    intro: >-
+      When two atomically thin crystals are stacked with a small twist or
+      lattice mismatch, their interference creates a moiré superlattice with a
+      period hundreds of times larger than the atoms. Electrons doped into
+      this landscape are dilute and strongly interacting, and the long-range
+      Coulomb repulsion dominates. The resulting phases, from Wigner crystals
+      to correlated insulators and emergent topology, are tunable by twist
+      angle, gate voltage, and material choice.
+    intro2: >-
+      We model these systems with neural quantum states (NQS) and quantum
+      Monte Carlo. A neural network represents the many-electron wavefunction
+      directly, so the same ansatz describes liquids, crystals, and everything
+      in between. Because the calculation is done in real space, it can take
+      in the actual conditions of a device, such as a defect map measured by
+      scanning tunneling microscopy, and produce predictions that can be
+      compared with experiment quantitatively. Ongoing work extends this
+      toolkit to moiré electrons in strong magnetic fields, where charge
+      order and topology compete.
+    cards:
+      - title: Visualizing the impact of quenched disorder on 2D electron Wigner solids
+        authors: Z. Ge, C. Smith, Z. He, Yubo Yang, Q. Li, H.-L. Kim, Z. Xiang, J. Xiao, W. Zhou, S. Kahn, A. Hu, M. Erdi, R. Banerjee, T. Taniguchi, K. Watanabe, S. A. Tongay, M. A. Morales, S. Zhang, F. Wang, M. F. Crommie
+        summary: >-
+          Defect positions mapped by STM in bilayer MoSe2 were fed directly
+          into NQS simulations, which reproduced the imaged Wigner solids and
+          separated the roles of disorder and interaction in stabilizing them.
+        abstract: >-
+          Thanks to major advances in scanning tunneling microscopy (STM) and
+          neural-quantum-state (NQS) techniques, we were able to quantitatively
+          understand the behavior of electrons in the presence of various
+          densities of long-range and short-range disorder in bilayer MoSe2
+          devices. The location and strength of the disorder were mapped by
+          STM and fed into the NQS simulations, enabling direct and realistic
+          modeling of the experimental conditions. The NQS simulations matched
+          the experiments to high fidelity and allowed us to vary the disorder
+          and interaction strengths separately.
+        figure: /research/arxiv-2510-12009-fig2.png
+        venue: Nature 654, 902 (2026)
+        venueUrl: https://www.nature.com/articles/s41586-026-10654-w
+        arxiv: "2510.12009"
+      - title: Neural network discovery of paired Wigner crystals in artificial graphene
+        authors: C. Smith, Yubo Yang, Z.-Q. Wan, Y. Chen, M. A. Morales, S. Zhang
+        summary: >-
+          At half filling of a honeycomb moiré lattice, NQS finds a paired
+          Wigner crystal: singlet pairs delocalized over honeycomb rings, a
+          phase that density functional theory misses.
+        abstract: >-
+          We study the honeycomb moiré system at half filling. While DFT
+          predicts the usual antiferromagnetic generalized Wigner crystal, NQS
+          calculations discover a paired Wigner crystal, in which singlet pairs
+          of electrons delocalize over honeycomb ring motifs that themselves
+          form a triangular lattice. The pairing is stabilized by a delicate
+          balance in which the kinetic energy gained by delocalizing over the
+          ring edges out the slight increase in moiré potential energy and
+          Coulomb interaction.
+        figure: /research/arxiv-2602-16798-fig2c-4a.png
+        venue: Preprint (2026)
+        arxiv: "2602.16798"
+      - title: Ferromagnetic semimetal and charge-density wave phases of interacting electrons in a honeycomb moiré potential
+        authors: Yubo Yang, M. A. Morales, S. Zhang
+        summary: >-
+          With increasing moiré depth at quarter filling, the electron gas on a
+          honeycomb superlattice goes from paramagnetic metal to itinerant
+          ferromagnetic semimetal to charge-density-wave insulator.
+        abstract: >-
+          We study the two-dimensional electron gas on a honeycomb moiré
+          lattice at quarter filling, using fixed-phase diffusion Monte Carlo.
+          The ground-state phases of this model are determined in the
+          parameter regime relevant to current experiments. With increasing
+          moiré potential, the system transitions from a paramagnetic metal to
+          an itinerant ferromagnetic semimetal and then a charge-density-wave
+          insulator.
+        figure: /research/arxiv-2406-01715-fig1-phases.png
+        venue: Phys. Rev. Lett. 133, 266501 (2024)
+        venueUrl: https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.133.266501
+        arxiv: "2406.01715"
+      - title: Observation of an electronic microemulsion phase emerging from a quantum crystal-to-liquid transition
+        authors: J. Sung, J. Wang, I. Esterlis, P. A. Volkov, G. Scuri, Y. Zhou, E. Brutschea, T. Taniguchi, K. Watanabe, Yubo Yang, M. A. Morales, S. Zhang, A. J. Millis, M. D. Lukin, P. Kim, E. Demler, H. Park
+        summary: >-
+          Optical spectroscopy of monolayer MoSe2 reveals a mixed state between
+          Wigner crystal and electron liquid, a distinct electronic
+          microemulsion phase.
+        abstract: >-
+          We use cryogenic reflectance and magneto-optical spectroscopy to
+          observe the signatures of the mixed state between an electronic
+          Wigner crystal and an electron liquid in a MoSe2 monolayer. The
+          transit into this microemulsion state is marked by anomalies in
+          exciton reflectance, spin susceptibility, and Umklapp scattering,
+          establishing it as a distinct phase of electronic matter.
+        figure: /research/arxiv-2311-18069-fig4.png
+        venue: Nat. Phys. 21, 437 (2025)
+        venueUrl: https://www.nature.com/articles/s41567-024-02759-8
+        arxiv: "2311.18069"
+      - title: Metal-insulator transition in a semiconductor heterobilayer model
+        authors: Yubo Yang, M. A. Morales, S. Zhang
+        summary: >-
+          Two complementary QMC methods map the metal-insulator transition of
+          the moiré continuum model and identify the hybrid functional that
+          best reproduces it.
+        abstract: >-
+          We combine phaseless auxiliary-field quantum Monte Carlo and
+          fixed-phase diffusion Monte Carlo to study the ground state of the
+          moiré continuum Hamiltonian. We observe a metal-insulator transition
+          between a paramagnetic and a 120-degree Néel ordered state as the
+          moiré potential depth and the interaction strength are varied, find
+          significant differences from Hartree-Fock and exact diagonalization
+          studies, and suggest an optimal hybrid functional.
+        figure: /research/arxiv-2306-14954-fig1.png
+        venue: Phys. Rev. Lett. 132, 076503 (2024)
+        venueUrl: https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.132.076503
+        arxiv: "2306.14954"
+
+  - id: methods
+    title: Neural quantum states and quantum Monte Carlo
+    intro: >-
+      The wavefunction of N interacting electrons is a function on a
+      3N-dimensional space. Quantum Monte Carlo samples that space
+      stochastically, so accurate wavefunctions can be used directly. Neural
+      quantum states replace hand-built ansätze with a neural network that is
+      optimized variationally, giving one flexible description across phases.
+      We develop and benchmark both.
+    cards:
+      - title: Unified variational approach description of ground-state phases of the two-dimensional electron gas
+        authors: C. Smith, Y. Chen, R. Levy, Yubo Yang, M. A. Morales, S. Zhang
+        summary: >-
+          A single message-passing neural backflow ansatz describes the 2D
+          electron gas across all densities, lowers the best known energies,
+          and locates Wigner crystallization at rs = 37.
+        abstract: >-
+          We use a single variational ansatz, a general backflow-type wave
+          function using a message-passing neural quantum state architecture,
+          for a unified description of the two-dimensional electron gas across
+          the entire density range. The variational optimization consistently
+          leads to lower ground-state energies than previous best results.
+          Transition into a Wigner crystal occurs automatically at rs = 37 +/-
+          1, and the same ansatz strongly suggests intermediate states with
+          enhanced short-range nematic spin correlations.
+        figure: /research/arxiv-2405-19397-fig23.png
+        venue: Phys. Rev. Lett. 133, 266504 (2024)
+        venueUrl: https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.133.266504
+        arxiv: "2405.19397"
+
+  - id: hydrogen
+    title: Machine-learned potentials for dense hydrogen
+    intro: >-
+      Interatomic potentials trained on quantum Monte Carlo energies and
+      forces make it possible to run long molecular dynamics at QMC accuracy.
+      We used them to map melting, solid phases, and the liquid-liquid
+      transition of hydrogen at planetary pressures.
+    cards:
+      - title: "The liquid-liquid phase transition of hydrogen and its critical point: analysis from ab initio simulation and a machine-learned potential"
+        authors: M. Istas, S. Jensen, Yubo Yang, M. Holzmann, C. Pierleoni, D. M. Ceperley
+        summary: >-
+          A NequIP potential trained on DFT reproduces the liquid-liquid
+          transition and, through finite-size scaling, pins its critical point
+          near 1200-1300 K and 155-160 GPa.
+        figure: /research/arxiv-2412-14953-fig1.png
+        venue: Phys. Rev. E 111, 045307 (2025)
+        venueUrl: https://journals.aps.org/pre/abstract/10.1103/PhysRevE.111.045307
+        arxiv: "2412.14953"
+      - title: High temperature melting of dense molecular hydrogen from machine-learning interatomic potentials trained on quantum Monte Carlo
+        authors: S. Goswami, S. Jensen, Yubo Yang, M. Holzmann, C. Pierleoni, D. M. Ceperley
+        summary: >-
+          A QMC-trained potential gives the melting curve of molecular
+          hydrogen from 50 to 180 GPa for both classical and quantum nuclei.
+        figure: /research/arxiv-2411-15665-fig7.png
+        venue: J. Chem. Phys. 162, 054118 (2025)
+        venueUrl: https://pubs.aip.org/aip/jcp/article/162/5/054118/3333656
+        arxiv: "2411.15665"
+      - title: Stable solid molecular hydrogen above 900 K from a machine-learned potential trained with diffusion quantum Monte Carlo
+        authors: H. Niu, Yubo Yang, S. Jensen, M. Holzmann, C. Pierleoni, D. M. Ceperley
+        summary: >-
+          Path-integral molecular dynamics with a QMC-trained potential finds
+          two new stable Fmmm-4 phases and a reentrant melting line.
+        figure: /research/arxiv-2209.00658-fig1.png
+        venue: Phys. Rev. Lett. 130, 076102 (2023)
+        venueUrl: https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.130.076102
+        arxiv: "2209.00658"

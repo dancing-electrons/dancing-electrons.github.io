@@ -10,6 +10,9 @@
   pressLabel: Read the Hofstra story
 
 - agency: NSF ACCESS
+  logo: /funding/nsf_access_logo.png
+  logoAlt: NSF ACCESS logo
+  logoPosition: below
   program: Computing allocation
   title: "Correlated methods for 2D quantum materials"
   number: PHY250273

@@ -15,7 +15,7 @@ const email = people.pi.emails[0];
           <a class="btn" href="/research/">See the research</a>
           <a class="btn btn--ghost" href="/people/">Join the group</a>
         </div>
-        <p class="eyebrow" style="color: #84C8FF;">Department of Physics and Astronomy, Hofstra University</p>
+        <p class="eyebrow" style="color: #84C8FF;">Department of Physics and Astronomy, Hofstra</p>
       </div>
       <MoireHero />
     </div>
@@ -80,11 +80,19 @@ const email = people.pi.emails[0];
       <p class="eyebrow" data-reveal>Supported by</p>
       <div class="grid grid--2" style="gap: 40px;">
         {funding.map((f: any) => (
-          <div class="stack" style="gap: 8px;" data-reveal>
-            <h3>{f.agency}<span class="muted" style="font-weight: 600;"> · {f.program}</span></h3>
-            <p><a href={f.url} rel="noopener"><strong>{f.title}</strong></a> <span class="muted">({f.number}, {f.period})</span></p>
-            <p class="muted small">{f.note}</p>
-            {f.press && <p class="small"><a href={f.press} rel="noopener">{f.pressLabel ?? 'Read more'}</a></p>}
+          <div class={`funding ${f.logoPosition === 'left' ? 'funding--left' : ''}`} data-reveal>
+            {f.logo && f.logoPosition === 'left' && (
+              <img class="funding-logo funding-logo--left" src={f.logo} alt={f.logoAlt ?? f.agency} loading="lazy" />
+            )}
+            <div class="stack" style="gap: 8px;">
+              <h3>{f.agency}<span class="muted" style="font-weight: 600;"> · {f.program}</span></h3>
+              <p><a href={f.url} rel="noopener"><strong>{f.title}</strong></a> <span class="muted">({f.number}, {f.period})</span></p>
+              <p class="muted small">{f.note}</p>
+              {f.press && <p class="small"><a href={f.press} rel="noopener">{f.pressLabel ?? 'Read more'}</a></p>}
+              {f.logo && f.logoPosition !== 'left' && (
+                <img class="funding-logo funding-logo--below" src={f.logo} alt={f.logoAlt ?? f.agency} loading="lazy" />
+              )}
+            </div>
           </div>
         ))}
       </div>
@@ -93,7 +101,7 @@ const email = people.pi.emails[0];
 
   <section class="section section--blue">
     <div class="wrap grid grid--2" style="align-items: center; gap: 48px;">
-      <h2 data-reveal>We welcome students from all backgrounds who are excited to learn Python, machine learning, and how electrons really behave.</h2>
+      <h2 data-reveal>Excited to learn coding, machine learning, and how electrons really behave? <a class="btn" href="/people/">Join us!</a></h2>
       <div class="stack" style="gap: 10px;" data-reveal>
         <a href={`mailto:${email}`} style="color: #FFC72C; font-weight: 700;">{email}</a>
         <span>{people.pi.office}, Hofstra University, Hempstead, NY</span>
@@ -104,6 +112,12 @@ const email = people.pi.emails[0];
 </Base>
 
 <style>
+  .funding { display: flex; flex-direction: column; gap: 12px; }
+  .funding--left { flex-direction: row; align-items: flex-start; gap: 20px; }
+  .funding-logo { width: auto; max-width: 100%; object-fit: contain; object-position: left; }
+  .funding-logo--left { height: 72px; flex: 0 0 auto; margin-top: 4px; }
+  .funding-logo--below { height: 40px; margin-top: 8px; }
+  @media (max-width: 600px) { .funding--left { flex-direction: column; } }
   .hero { background: linear-gradient(180deg, #001254 0%, #001a6e 100%); color: #ffffff; padding-top: clamp(32px, 5vw, 56px); padding-bottom: clamp(48px, 6vw, 80px); overflow: hidden; }
   .hero__grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); align-items: center; gap: 32px; }
   .hero__lede { font-size: 20px; line-height: 1.55; color: #cfe3ff; max-width: 520px; }

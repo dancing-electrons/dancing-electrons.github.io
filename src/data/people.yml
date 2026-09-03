@@ -6,7 +6,6 @@ pi:
   photo: /people/yubo-yang.jpg
   emails:
     - paul.yang@hofstra.edu
-    - yubo.paul.yang@gmail.com
   links:
     - { label: Google Scholar, url: "https://scholar.google.com/citations?user=ZLz7D4IAAAAJ&hl=en" }
     - { label: ORCID, url: "https://orcid.org/0000-0002-8800-9426" }
@@ -14,27 +13,28 @@ pi:
     - { label: Personal site, url: "https://paul-st-young.github.io/research" }
   bio: >-
     Paul studied mathematics and physics at Denison University and earned his
-    PhD in physics at the University of Illinois Urbana-Champaign with David
-    Ceperley. After a postdoc at Lawrence Livermore National Laboratory and a
-    Flatiron Research Fellowship at the Center for Computational Quantum
-    Physics, he joined Hofstra University in 2025. He develops neural-network
-    and quantum Monte Carlo methods for strongly interacting electrons.
+    PhD in physics at the University of Illinois Urbana-Champaign with Prof. David
+    Ceperley. After postdoctoral work at Lawrence Livermore National Laboratory and
+    the Center for Computational Quantum Physics (CCQ) at the Flatiron Institute,
+    he joined Hofstra University in Fall of 2024. He develops neural-network
+    and quantum Monte Carlo methods to study strongly interacting electrons.
 
 current:
   - name: Nicole Adelson
     photo: /people/nicole-adelson.jpg
     role: Undergraduate researcher
     email: nadelson1@pride.hofstra.edu
-    since: 2025
+    since: 2026
   - name: Jadan Joa
+    photo: /people/jadan.webp
     role: Undergraduate researcher
     email: jjoa1@pride.hofstra.edu
-    since: 2025
+    since: 2026
   - name: Emilia Szynwald
     photo: /people/emilia-szynwald.jpg
     role: Undergraduate researcher
     email: eszynwald1@pride.hofstra.edu
-    since: 2024
+    since: 2025
   - name: Makayla "Cameron" Bogart-Getner
     photo: /people/cam.jpg
     role: Undergraduate researcher

@@ -1,0 +1,61 @@
+# Talks by the PI. `recent` renders at the top of /talks/, newest first.
+# `series` are historical talk series; each renders as its own section.
+# Dates are YYYY-MM or YYYY-MM-DD. The page sorts every list by date,
+
+recent:
+  - title: NQS simulations meet moiré and semiconductor devices
+    date: 2026-08-27
+    speakers: Yubo Yang (Hofstra) and Conor Smith (Flatiron Institute)
+    venue: "Kavli Institute for Theoretical Physics, program on AI for Quantum Matter (invited)"
+    location: Santa Barbara, CA
+    links:
+      - { label: Video, url: "https://online.kitp.ucsb.edu/online/aiqmatter26/yang_smith" }
+  - title: Vibe coding via Antigravity
+    date: 2026-02
+    venue: Data Science and AI (DSAI) Lunch and Learn, Hofstra University
+    location: Hempstead, NY
+    links:
+      - { label: Video, url: "https://www.youtube.com/watch?v=9UHgiRex5_g&list=PLv1XHTzh5OW7At33-BY2gLWpUkWknNVHy&index=4" }
+  - title: Jupyter Lab vs time series
+    date: 2025-10
+    venue: Data Science and AI (DSAI) Lunch and Learn, Hofstra University
+    location: Hempstead, NY
+    links:
+      - { label: Video, url: "https://www.youtube.com/watch?v=y-WiAx3PY4c&list=PLv1XHTzh5OW7At33-BY2gLWpUkWknNVHy&index=7" }
+
+series:
+  - name: Algorithm Interest Group
+    org: University of Illinois Urbana-Champaign
+    years: 2016–2020
+    url: "http://algorithm-interest-group.com/"
+    about: >-
+      A weekly meeting founded by physics graduate students at UIUC, where
+      one member presents an algorithm and its use in practice.
+    talks:
+      - { title: Linear sum assignment, date: 2020-10-19, url: "http://algorithm-interest-group.com/algorithm/Linear-Sum-Assignment-Yubo-Paul-Yang/" }
+      - { title: Compressive sensing, date: 2019-11-01, url: "http://algorithm-interest-group.com/algorithm/Compressive-Sensing-Yubo-Paul-Yang/" }
+      - { title: Kriging (Gaussian process regression), date: 2019-01-17, url: "http://algorithm-interest-group.com/algorithm/Kriging-Yubo-Paul-Yang/" }
+      - { title: Meltdown, date: 2018-01-26, url: "http://algorithm-interest-group.com/algorithm/Meltdown-Yubo-Paul-Yang/" }
+      - { title: Marching cubes, date: 2017-09-12, url: "http://algorithm-interest-group.com/algorithm/Marching-Cubes-Yubo-Paul-Yang/" }
+      - { title: Gibbs sampling, date: 2017-01-24, url: "http://algorithm-interest-group.com/algorithm/Gibbs-Sampling-Yubo-Paul-Yang/" }
+      - { title: Particle swarm optimization, date: 2016-09-09, url: "http://algorithm-interest-group.com/algorithm/Particle-Swarm-Optimization-Yubo-Paul-Yang/" }
+      - { title: Automatic differentiation, date: 2016-06-01, url: "http://algorithm-interest-group.com/algorithm/Automatic-Differentiation-Yubo-Paul-Yang/" }
+
+  - name: The Hacker Within
+    org: University of Illinois Urbana-Champaign, NCSA
+    years: 2016–2020
+    url: "http://www.thehackerwithin.org/illinois/"
+    about: >-
+      A student-run group at the National Center for Supercomputing
+      Applications that teaches research computing skills through tutorials
+      and demos.
+    talks:
+      - { title: "Parallelization: parallelize Python with Dask", date: 2019-11-20, with: Cail Daley, url: "http://www.thehackerwithin.org/illinois/posts/parallelization" }
+      - { title: "Python as glue: accelerate Python using Fortran and C++", date: 2019-04-17, with: Josh Vita, url: "http://www.thehackerwithin.org/illinois/posts/python-as-glue-and-object-oriented-programming" }
+      - { title: Data visualization showcase, date: 2019-02-06, with: Cail Daley, url: "http://www.thehackerwithin.org/illinois/posts/data-visualization-showcase" }
+      - { title: Docker for science, date: 2018-12-05, url: "http://www.thehackerwithin.org/illinois/posts/docker" }
+      - { title: "Game engines for scientific visualization (Unreal Engine 4)", date: 2018-04-04, url: "http://www.thehackerwithin.org/illinois/posts/game-engines-viz" }
+      - { title: Sphinx documentation and Python packaging, date: 2017-10-18, url: "http://www.thehackerwithin.org/illinois/posts/sphinx" }
+      - { title: Best practices, date: 2016-11-30, with: Aaron Anderson, url: "http://www.thehackerwithin.org/illinois/posts/best-practices-f16" }
+      - { title: Python tutorial, date: 2016-09-21, url: "http://www.thehackerwithin.org/illinois/posts/python-tutorial" }
+      - { title: Jump start Julia with path integral Monte Carlo, date: 2016-02-03, url: "http://www.thehackerwithin.org/illinois/posts/jump-start-julia-with-pimc" }

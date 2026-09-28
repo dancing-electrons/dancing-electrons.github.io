@@ -20,6 +20,7 @@ updates.
 | People (PI, current members, alumni) | `src/data/people.yml` |
 | Research themes and highlighted papers | `src/data/research.yml` |
 | Grants shown in the "Supported by" band | `src/data/funding.yml` |
+| Talks (recent talks and past talk series) | `src/data/talks.yml` |
 | Photos | `public/people/` (square crops, 600 px or larger) |
 | Paper figures | `public/research/` |
 

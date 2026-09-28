@@ -141,3 +141,18 @@ html.js [data-reveal].is-visible { opacity: 1; transform: none; }
 .pub { display: grid; grid-template-columns: 48px minmax(0, 1fr); gap: 12px; padding: 18px 0; border-top: 1px solid var(--rule); font-size: 16px; line-height: 1.55; }
 .pub__num { font-family: var(--display); font-weight: 700; color: var(--blue); }
 .pub__links { display: inline-flex; gap: 12px; margin-left: 8px; font-size: 14px; font-weight: 600; white-space: nowrap; }
+
+/* talks */
+.talks { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; }
+.talk { display: grid; grid-template-columns: 110px minmax(0, 1fr); gap: 16px; padding: 18px 0; border-top: 1px solid var(--rule); font-size: 16px; line-height: 1.55; }
+.talk__date { font-family: var(--display); font-weight: 700; color: var(--blue); white-space: nowrap; }
+.talk__title { font-weight: 600; color: var(--ink); }
+.talk__meta { font-size: 15px; color: var(--ink-2); }
+.talk__links { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 8px; }
+.talks--compact .talk { padding: 12px 0; }
+.series { display: grid; grid-template-columns: 280px minmax(0, 1fr); gap: 40px; align-items: start; }
+.series + .series { margin-top: 56px; }
+@media (max-width: 720px) {
+  .series { grid-template-columns: minmax(0, 1fr); gap: 16px; }
+  .talk { grid-template-columns: minmax(0, 1fr); gap: 2px; }
+}

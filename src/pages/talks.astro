@@ -1,0 +1,67 @@
+---
+import Base from '../layouts/Base.astro';
+import { talks } from '../lib/data';
+
+const MONTHS = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+/** "2026-08-27" -> "Aug 2026"; "2026-02" -> "Feb 2026". */
+function fmt(d: unknown): string {
+  const [y, m] = String(d).split('-');
+  return m ? `${MONTHS[Number(m) - 1]} ${y}` : y;
+}
+const newestFirst = (a: any, b: any) => String(b.date).localeCompare(String(a.date));
+const recent = [...talks.recent].sort(newestFirst);
+const series = talks.series.map((s: any) => ({ ...s, talks: [...s.talks].sort(newestFirst) }));
+---
+<Base title="Talks" description="Recent and past talks by Yubo (Paul) Yang, PI of the Dancing Electrons group.">
+  <div class="wrap page-title"><h1>Talks</h1></div>
+
+  <section class="section" style="padding-top: 24px;">
+    <div class="wrap stack" style="gap: 20px;">
+      <h2>Recent talks</h2>
+      <ol class="talks">
+        {recent.map((t: any) => (
+          <li class="talk">
+            <span class="talk__date">{fmt(t.date)}</span>
+            <div>
+              <div class="talk__title">{t.title}</div>
+              {t.speakers && <div class="talk__meta">{t.speakers}</div>}
+              <div class="talk__meta">{t.venue}{t.location && `, ${t.location}`}</div>
+              {t.links && (
+                <div class="talk__links">
+                  {t.links.map((l: any) => <a class="chip" href={l.url} rel="noopener">{l.label}</a>)}
+                </div>
+              )}
+            </div>
+          </li>
+        ))}
+      </ol>
+    </div>
+  </section>
+
+  <section class="section section--tint">
+    <div class="wrap">
+      <h2 style="margin-bottom: 32px;">Previous talks</h2>
+      {series.map((s: any) => (
+        <div class="series">
+          <div class="stack" style="gap: 10px;">
+            <h3>{s.name}</h3>
+            <p class="muted small">{s.org}, {s.years}</p>
+            <p class="small">{s.about}</p>
+            {s.url && <a class="small" href={s.url} rel="noopener">Series archive</a>}
+          </div>
+          <ol class="talks talks--compact">
+            {s.talks.map((t: any) => (
+              <li class="talk">
+                <span class="talk__date">{fmt(t.date)}</span>
+                <span>
+                  <a href={t.url} rel="noopener">{t.title}</a>
+                  {t.with && <span class="talk__meta">{' '}(with {t.with})</span>}
+                </span>
+              </li>
+            ))}
+          </ol>
+        </div>
+      ))}
+    </div>
+  </section>
+</Base>

@@ -4,6 +4,7 @@ pi:
   department: Department of Physics and Astronomy, Hofstra University
   office: Berliner Hall 217B
   photo: /people/yubo-yang.jpg
+  cv: /people/ypy-simple.pdf
   emails:
     - paul.yang@hofstra.edu
   links:

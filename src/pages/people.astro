@@ -21,6 +21,7 @@ const { pi, current, alumni } = people;
           <span class="muted">{pi.office}</span>
         </div>
         <div class="row" style="gap: 10px;">
+          {pi.cv && <a class="chip chip--gold" href={pi.cv}>CV (PDF)</a>}
           {pi.links.map((l: any) => <a class="chip" href={l.url} rel="noopener">{l.label}</a>)}
         </div>
       </div>
